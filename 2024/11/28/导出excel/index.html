@@ -10,7 +10,7 @@
     
     
     
-    <title>404 | GAL</title>
+    <title>接口返回类型最好是 void | GAL</title>
     <link href="https://cyris258.github.io" rel="prefetch" />
 
     
@@ -197,10 +197,103 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://cyris258.github.io">GAL</a>
+        >
+        <span>接口返回类型最好是 void</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/">接口返回类型最好是 void</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/">接口返回类型最好是 void</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="接口返回类型最好是-void"><a href="#接口返回类型最好是-void" class="headerlink" title="接口返回类型最好是 void"></a><strong>接口返回类型最好是 void</strong></h1><p>在这个特定的情况下，如果 <code>exportAzurExcel</code> 方法返回其他类型（如 <code>String</code>、<code>Object</code>、或 <code>ResponseEntity</code>），将对方法的设计和调用方式产生影响。以下是一些常见的返回类型及其影响：</p>
+<ol>
+<li><p><strong>返回 <code>String</code></strong>:</p>
+<ul>
+<li><p><strong>影响</strong>: 返回 <code>String</code> 通常用于返回视图名称或简单的文本响应。这会改变方法的语义，使得调用者期望接收一个字符串而不是下载文件。</p>
+</li>
+<li><p>示例</p>
+<p>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java复制代码@GetMapping(&quot;/exportAzurExcel&quot;)</span><br><span class="line">@ApiModelProperty(&quot;下载舰娘excel模板文件&quot;)</span><br><span class="line">public String exportAzurExcel(HttpServletResponse response) &#123;</span><br><span class="line">    azKantaiService.exportAzurExcel(response);</span><br><span class="line">    return &quot;success&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>结果</strong>: 客户端可能会收到 <code>success</code> 字符串，而不是期望的文件下载。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>返回 <code>Object</code></strong>:</p>
+<ul>
+<li><p><strong>影响</strong>: 返回 <code>Object</code> 适用于返回任意类型的数据。这通常用于 RESTful API 返回 JSON 数据，但在文件下载的情况下不合适。</p>
+</li>
+<li><p>示例</p>
+<p>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java复制代码@GetMapping(&quot;/exportAzurExcel&quot;)</span><br><span class="line">@ApiModelProperty(&quot;下载舰娘excel模板文件&quot;)</span><br><span class="line">public Object exportAzurExcel(HttpServletResponse response) &#123;</span><br><span class="line">    azKantaiService.exportAzurExcel(response);</span><br><span class="line">    return new Object(); // 实际返回值没有意义</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>结果</strong>: 客户端收到一个无意义的对象，而不是文件。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>返回 <code>ResponseEntity</code></strong>:</p>
+<ul>
+<li><p><strong>影响</strong>: <code>ResponseEntity</code> 可以更灵活地控制 HTTP 响应，包括设置状态码和响应头。对于文件下载，这种方法是可行的，但与直接通过 <code>HttpServletResponse</code> 写入文件相比并没有明显优势。</p>
+</li>
+<li><p>示例</p>
+<p>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java复制代码@GetMapping(&quot;/exportAzurExcel&quot;)</span><br><span class="line">@ApiModelProperty(&quot;下载舰娘excel模板文件&quot;)</span><br><span class="line">public ResponseEntity&lt;Void&gt; exportAzurExcel(HttpServletResponse response) &#123;</span><br><span class="line">    azKantaiService.exportAzurExcel(response);</span><br><span class="line">    return ResponseEntity.ok().build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>结果</strong>: 文件下载成功，响应状态码为 200，但方法设计变得复杂。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>返回 <code>void</code></strong>:</p>
+<ul>
+<li><p><strong>影响</strong>: 返回 <code>void</code> 是最适合这种情况的，因为方法的主要目的是通过响应流输出文件，而不需要返回任何数据。</p>
+</li>
+<li><p>示例</p>
+<p>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java复制代码@GetMapping(&quot;/exportAzurExcel&quot;)</span><br><span class="line">@ApiModelProperty(&quot;下载舰娘excel模板文件&quot;)</span><br><span class="line">public void exportAzurExcel(HttpServletResponse response) &#123;</span><br><span class="line">    azKantaiService.exportAzurExcel(response);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>结果</strong>: 文件下载成功，没有多余的返回值，方法设计清晰简洁。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>具体实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">try</span> (<span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathResource</span>(<span class="string">&quot;templates/SHIP.xlsx&quot;</span>).getInputStream();</span><br><span class="line">             <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> response.getOutputStream()) &#123;</span><br><span class="line">            response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">            response.setContentType(<span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> URLEncoder.encode(<span class="string">&quot;项目导入模板&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>).replaceAll(<span class="string">&quot;\\+&quot;</span>, <span class="string">&quot;%20&quot;</span>);</span><br><span class="line">            response.setHeader(<span class="string">&quot;Content-disposition&quot;</span>, <span class="string">&quot;attachment;filename*=utf-8&#x27;&#x27;&quot;</span> + fileName + <span class="string">&quot;.xlsx&quot;</span>);</span><br><span class="line">            IOUtils.copy(inputStream, outputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line"><span class="comment">//            Preconditions.interrupt(&quot;模板下载失败: &quot; + e.getMessage());</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
 
-<!-- 404 自定义页面 -->
-<!-- 有其他想自定义的page在这里添加判断条件, 并且写好对应的模板渲染文件 -->
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -346,13 +439,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8EObjectMapper/"></a>
+                    <a href="/2024/11/28/switch%E5%9D%91/"></a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8Eparent_id/"></a>
+                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8EObjectMapper/"></a>
                 </span>
             </li>
             
@@ -403,17 +496,17 @@
 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -421,9 +514,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Hexo/" style="font-size: 9.502668277539488px;" class="tag-cloud-link">Hexo</a>
+    <a href="/tags/Hexo/" style="font-size: 18.5221539563718px;" class="tag-cloud-link">Hexo</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 15.349762302358124px;" class="tag-cloud-link">博客</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 13.957810647040223px;" class="tag-cloud-link">博客</a>
     
 </div>
                 

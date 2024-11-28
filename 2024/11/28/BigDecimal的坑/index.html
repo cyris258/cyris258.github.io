@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="cyris">
+    
+    
+    
+    
+    
+    
+    <title>GAL</title>
+    <link href="https://cyris258.github.io" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://cyris258.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://cyris258.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">GAL</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Hexo/">Hexo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://cyris258.github.io">GAL</a>
+        >
+        <span></span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/11/28/BigDecimal%E7%9A%84%E5%9D%91/"></a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/11/28/BigDecimal%E7%9A%84%E5%9D%91/"></a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p><strong>第一：浮点类型的坑</strong></p>
+<p>在学习了解BigDecimal的坑之前，先来说一个老生常谈的问题：如果使用Float、Double等浮点类型进行计算时，有可能得到的是一个近似值，而不是精确的值。</p>
+<p>比如下面的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void test0()&#123;</span><br><span class="line">  float a = 1;</span><br><span class="line">  float b = 0.9f;</span><br><span class="line">  System.out.println(a - b);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果是多少？0.1吗？不是，执行上面代码执行的结果是0.100000024。之所以产生这样的结果，是因为0.1的二进制表示是无限循环的。由于计算机的资源是有限的，所以是没办法用二进制精确的表示 0.1，只能用「近似值」来表示，就是在有限的精度情况下，最大化接近 0.1 的二进制数，于是就会造成精度缺失的情况。</p>
+<p>关于上述的现象大家都知道，不再详细展开。同时，还会得出结论在科学计数法时可考虑使用浮点类型，但如果是涉及到金额计算要使用BigDecimal来计算。</p>
+<p>那么，BigDecimal就一定能避免上述的浮点问题吗？来看下面的示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void test1()&#123;</span><br><span class="line">  BigDecimal a = new BigDecimal(0.01);</span><br><span class="line">  BigDecimal b = BigDecimal.valueOf(0.01);</span><br><span class="line">  System.out.println(&quot;a = &quot; + a);</span><br><span class="line">  System.out.println(&quot;b = &quot; + b);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述单元测试中的代码，a和b结果分别是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = 0.01000000000000000020816681711721685132943093776702880859375</span><br><span class="line">b = 0.01</span><br></pre></td></tr></table></figure>
+
+<p>上面的实例说明，即便是使用BigDecimal，结果依旧会出现精度问题。这就涉及到创建BigDecimal对象时，如果有初始值，是采用new BigDecimal的形式，还是通过BigDecimal#valueOf方法了。</p>
+<p>之所以会出现上述现象，是因为new BigDecimal时，传入的0.1已经是浮点类型了，鉴于上面说的这个值只是近似值，在使用new BigDecimal时就把这个近似值完整的保留下来了。</p>
+<p>而BigDecimal#valueOf则不同，它的源码实现如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static BigDecimal valueOf(double val) &#123;</span><br><span class="line">        // Reminder: a zero double returns &#x27;0.0&#x27;, so we cannot fastpath</span><br><span class="line">        // to use the constant ZERO.  This might be important enough to</span><br><span class="line">        // justify a factory approach, a cache, or a few private</span><br><span class="line">        // constants, later.</span><br><span class="line">        return new BigDecimal(Double.toString(val));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在valueOf内部，使用Double#toString方法，将浮点类型的值转换成了字符串，因此就不存在精度丢失问题了。</p>
+<p>此时就得出一个基本的结论：第一，在使用BigDecimal构造函数时，尽量传递字符串而非浮点类型；第二，如果无法满足第一条，则可采用BigDecimal#valueOf方法来构造初始化值。</p>
+<p>这里延伸一下，BigDecimal常见的构造方法有如下几种：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal(int)       创建一个具有参数所指定整数值的对象。</span><br><span class="line">BigDecimal(double)    创建一个具有参数所指定双精度值的对象。</span><br><span class="line">BigDecimal(long)      创建一个具有参数所指定长整数值的对象。</span><br><span class="line">BigDecimal(String)    创建一个具有参数所指定以字符串表示的数值的对象。</span><br></pre></td></tr></table></figure>
+
+<p>其中涉及到参数类型为double的构造方法，会出现上述的问题，使用时需特别留意。</p>
+<p><strong>第二：浮点精度的坑</strong></p>
+<p>如果比较两个BigDecimal的值是否相等，你会如何比较？使用equals方法还是compareTo方法呢？</p>
+<p>先来看一个示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void test2()&#123;</span><br><span class="line">  BigDecimal a = new BigDecimal(&quot;0.01&quot;);</span><br><span class="line">  BigDecimal b = new BigDecimal(&quot;0.010&quot;);</span><br><span class="line">  System.out.println(a.equals(b));</span><br><span class="line">  System.out.println(a.compareTo(b));</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>乍一看感觉可能相等，但实际上它们的本质并不相同。</p>
+<p>equals方法是基于BigDecimal实现的equals方法来进行比较的，直观印象就是比较两个对象是否相同，那么代码是如何实现的呢？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public boolean equals(Object x) &#123;</span><br><span class="line">        if (!(x instanceof BigDecimal))</span><br><span class="line">            return false;</span><br><span class="line">        BigDecimal xDec = (BigDecimal) x;</span><br><span class="line">        if (x == this)</span><br><span class="line">            return true;</span><br><span class="line">        if (scale != xDec.scale)</span><br><span class="line">            return false;</span><br><span class="line">        long s = this.intCompact;</span><br><span class="line">        long xs = xDec.intCompact;</span><br><span class="line">        if (s != INFLATED) &#123;</span><br><span class="line">            if (xs == INFLATED)</span><br><span class="line">                xs = compactValFor(xDec.intVal);</span><br><span class="line">            return xs == s;</span><br><span class="line">        &#125; else if (xs != INFLATED)</span><br><span class="line">            return xs == compactValFor(this.intVal);</span><br><span class="line"></span><br><span class="line">        return this.inflated().equals(xDec.inflated());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>仔细阅读代码可以看出，equals方法不仅比较了值是否相等，还比较了精度是否相同。上述示例中，由于两者的精度不同，所以equals方法的结果当然是false了。而compareTo方法实现了Comparable接口，真正比较的是值的大小，返回的值为-1（小于），0（等于），1（大于）。</p>
+<p>基本结论：通常情况，如果比较两个BigDecimal值的大小，采用其实现的compareTo方法；如果严格限制精度的比较，那么则可考虑使用equals方法。</p>
+<p>另外，这种场景在比较0值的时候比较常见，比如比较BigDecimal(“0”)、BigDecimal(“0.0”)、BigDecimal(“0.00”)，此时一定要使用compareTo方法进行比较。</p>
+<p><strong>第三：设置精度的坑</strong></p>
+<p>在项目中看到好多同学通过BigDecimal进行计算时不设置计算结果的精度和舍入模式，真是着急人，虽然大多数情况下不会出现什么问题。但下面的场景就不一定了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void test3()&#123;</span><br><span class="line">  BigDecimal a = new BigDecimal(&quot;1.0&quot;);</span><br><span class="line">  BigDecimal b = new BigDecimal(&quot;3.0&quot;);</span><br><span class="line">  a.divide(b);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行上述代码的结果是什么？ArithmeticException异常！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.</span><br><span class="line"></span><br><span class="line"> at java.math.BigDecimal.divide(BigDecimal.java:1690)</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
+
+<p>这个异常的发生在官方文档中也有说明：</p>
+<p>If the quotient has a nonterminating decimal expansion and the operation is specified to return an exact result, an ArithmeticException is thrown. Otherwise, the exact result of the division is returned, as done for other operations.</p>
+<p>总结一下就是，如果在除法（divide）运算过程中，如果商是一个无限小数（0.333…），而操作的结果预期是一个精确的数字，那么将会抛出ArithmeticException异常。</p>
+<p>此时，只需在使用divide方法时指定结果的精度即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line"> public void test3()&#123;</span><br><span class="line">  BigDecimal a = new BigDecimal(&quot;1.0&quot;);</span><br><span class="line">  BigDecimal b = new BigDecimal(&quot;3.0&quot;);</span><br><span class="line">  BigDecimal c = a.divide(b, 2,RoundingMode.HALF_UP);</span><br><span class="line">  System.out.println(c);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行上述代码，输入结果为0.33。</p>
+<p>基本结论：在使用BigDecimal进行（所有）运算时，一定要明确指定精度和舍入模式。</p>
+<p>拓展一下，舍入模式定义在RoundingMode枚举类中，共有8种：</p>
+<p>RoundingMode.UP：舍入远离零的舍入模式。在丢弃非零部分之前始终增加数字(始终对非零舍弃部分前面的数字加1)。注意，此舍入模式始终不会减少计算值的大小。</p>
+<p>RoundingMode.DOWN：接近零的舍入模式。在丢弃某部分之前始终不增加数字(从不对舍弃部分前面的数字加1，即截短)。注意，此舍入模式始终不会增加计算值的大小。</p>
+<p>RoundingMode.CEILING：接近正无穷大的舍入模式。如果 BigDecimal 为正，则舍入行为与 ROUNDUP 相同;如果为负，则舍入行为与 ROUNDDOWN 相同。注意，此舍入模式始终不会减少计算值。</p>
+<p>RoundingMode.FLOOR：接近负无穷大的舍入模式。如果 BigDecimal 为正，则舍入行为与 ROUNDDOWN 相同;如果为负，则舍入行为与 ROUNDUP 相同。注意，此舍入模式始终不会增加计算值。</p>
+<p>RoundingMode.HALF_UP：向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则为向上舍入的舍入模式。如果舍弃部分 &gt;&#x3D; 0.5，则舍入行为与 ROUND_UP 相同;否则舍入行为与 ROUND_DOWN 相同。注意，这是我们在小学时学过的舍入模式(四舍五入)。</p>
+<p>RoundingMode.HALF_DOWN：向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则为上舍入的舍入模式。如果舍弃部分 &gt; 0.5，则舍入行为与 ROUND_UP 相同;否则舍入行为与 ROUND_DOWN 相同(五舍六入)。</p>
+<p>RoundingMode.HALF_EVEN：向“最接近的”数字舍入，如果与两个相邻数字的距离相等，则向相邻的偶数舍入。如果舍弃部分左边的数字为奇数，则舍入行为与 ROUNDHALFUP 相同;如果为偶数，则舍入行为与 ROUNDHALF_DOWN 相同。注意，在重复进行一系列计算时，此舍入模式可以将累加错误减到最小。此舍入模式也称为“银行家舍入法”，主要在美国使用。四舍六入，五分两种情况。如果前一位为奇数，则入位，否则舍去。以下例子为保留小数点1位，那么这种舍入方式下的结果。1.15 &#x3D;&#x3D;&gt; 1.2 ,1.25 &#x3D;&#x3D;&gt; 1.2</p>
+<p>RoundingMode.UNNECESSARY：断言请求的操作具有精确的结果，因此不需要舍入。如果对获得精确结果的操作指定此舍入模式，则抛出ArithmeticException。</p>
+<p>通常我们使用的四舍五入即RoundingMode.HALF_UP。</p>
+<p><strong>第四：三种字符串输出的坑</strong></p>
+<p>先来看看下面的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void test4()&#123;</span><br><span class="line">  BigDecimal a = BigDecimal.valueOf(35634535255456719.22345634534124578902);</span><br><span class="line">  System.out.println(a.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行的结果是上述对应的值吗？并不是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.563453525545672E+16</span><br></pre></td></tr></table></figure>
+
+<p>也就是说，本来想打印字符串的，结果打印出来的是科学计数法的值。</p>
+<p>这里我们需要了解BigDecimal转换字符串的三个方法</p>
+<ul>
+<li>toPlainString()：不使用任何科学计数法；</li>
+<li>toString()：在必要的时候使用科学计数法；</li>
+<li>toEngineeringString() ：在必要的时候使用工程计数法。类似于科学计数法，只不过指数的幂都是3的倍数，这样方便工程上的应用，因为在很多单位转换的时候都是10^3；</li>
+</ul>
+<p>三种方法展示结果示例如下：</p>
+<p><img src="https://s2.51cto.com/oss/202207/19/77592430783a4f9a11b034817a4c552e6f0152.jpg" alt="图片"></p>
+<p>计算法</p>
+<p>基本结论：**根据数据结果展示格式不同，采用不同的字符串输出方法，通常使用比较多的方法为toPlainString()**。</p>
+<p>另外，NumberFormat类的format()方法可以使用BigDecimal对象作为其参数，可以利用BigDecimal对超出16位有效数字的货币值，百分值，以及一般数值进行格式化控制。</p>
+<p>使用示例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NumberFormat currency = NumberFormat.getCurrencyInstance(); //建立货币格式化引用</span><br><span class="line">NumberFormat percent = NumberFormat.getPercentInstance();  //建立百分比格式化引用</span><br><span class="line">percent.setMaximumFractionDigits(3); //百分比小数点最多3位</span><br><span class="line"></span><br><span class="line">BigDecimal loanAmount = new BigDecimal(&quot;15000.48&quot;); //金额</span><br><span class="line">BigDecimal interestRate = new BigDecimal(&quot;0.008&quot;); //利率</span><br><span class="line">BigDecimal interest = loanAmount.multiply(interestRate); //相乘</span><br><span class="line"></span><br><span class="line">System.out.println(&quot;金额:\t&quot; + currency.format(loanAmount));</span><br><span class="line">System.out.println(&quot;利率:\t&quot; + percent.format(interestRate));</span><br><span class="line">System.out.println(&quot;利息:\t&quot; + currency.format(interest));</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">金额: ￥15,000.48 </span><br><span class="line">利率: 0.8% </span><br><span class="line">利息: ￥120.00</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            cyris
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E6%B5%8B%E8%AF%95/">Javafx</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E9%A1%B9%E7%9B%AE%E5%88%86%E8%A7%A3%E4%B8%BA%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%BF%AB%E6%8D%B7%E9%94%AE/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/">接口返回类型最好是 void</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E4%BA%8B%E9%A1%B9/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%8C%85%E5%90%8D/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%88%A4%E6%96%AD%E9%87%8D%E5%90%8D/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8Eparent_id/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8EObjectMapper/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/switch%E5%9D%91/"></a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/stream%E6%B5%81%E7%A9%BA/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/switch%E5%9D%91/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8EObjectMapper/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%85%B3%E4%BA%8Eparent_id/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%88%A4%E6%96%AD%E9%87%8D%E5%90%8D/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%8C%85%E5%90%8D/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E4%BA%8B%E9%A1%B9/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%AF%BC%E5%87%BAexcel/">接口返回类型最好是 void</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E5%BF%AB%E6%8D%B7%E9%94%AE/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E9%A1%B9%E7%9B%AE%E5%88%86%E8%A7%A3%E4%B8%BA%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/11/28/BigDecimal%E7%9A%84%E5%9D%91/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/11/28/BigDecimal%E7%9A%84%E5%9D%91/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/11/28/BigDecimal%E7%9A%84%E5%9D%91/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Hexo/" style="font-size: 9.236351697750262px;" class="tag-cloud-link">Hexo</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 16.3372927411168px;" class="tag-cloud-link">博客</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 cyris Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+
+</html>
