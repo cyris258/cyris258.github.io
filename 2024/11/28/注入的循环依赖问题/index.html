@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="cyris">
+    
+    
+    
+    
+    
+    
+    <title>GAL</title>
+    <link href="https://cyris258.github.io" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://cyris258.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://cyris258.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">GAL</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/">日常开发问题</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/">工具开发</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/acg/">acg</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%B9%BB%E6%83%B3%E4%B9%A1/">幻想乡</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://cyris258.github.io">GAL</a>
+        >
+        <span></span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/11/28/%E6%B3%A8%E5%85%A5%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/"></a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/11/28/%E6%B3%A8%E5%85%A5%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/"></a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-11-28
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>循环依赖指的是两个或多个 bean 彼此之间相互依赖，形成了一个循环的依赖关系。在 Spring 中，循环依赖是一种需要特别注意的情况，因为如果处理不当，可能会导致应用程序启动失败或者出现运行时的问题。以下是一个简单的循环依赖的例子及其解决方法：</p>
+<h3 id="示例：循环依赖"><a href="#示例：循环依赖" class="headerlink" title="示例：循环依赖"></a>示例：循环依赖</h3><p>假设有两个服务类 <code>ServiceA</code> 和 <code>ServiceB</code>，彼此互相依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceA(ServiceB serviceB) &#123;</span><br><span class="line">        this.serviceB = serviceB;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceB(ServiceA serviceA) &#123;</span><br><span class="line">        this.serviceA = serviceA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>ServiceA</code> 类依赖 <code>ServiceB</code> 类，而 <code>ServiceB</code> 类又依赖 <code>ServiceA</code> 类，形成了循环依赖。</p>
+<p>解决方案：</p>
+<p>​	<strong>构造函数注入改为字段注入</strong>：</p>
+<p>将构造函数注入改为字段注入可以避免循环依赖问题，因为字段注入发生在对象实例化后，不会出现循环等待的情况。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ServiceB serviceB;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ServiceA serviceA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用 <code>@Lazy</code> 注解</strong>：</p>
+<p>可以使用 <code>@Lazy</code> 注解延迟加载 bean，以避免立即初始化并解决循环依赖问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.Lazy;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceA(@Lazy ServiceB serviceB) &#123;</span><br><span class="line">        this.serviceB = serviceB;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.Lazy;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceB(@Lazy ServiceA serviceA) &#123;</span><br><span class="line">        this.serviceA = serviceA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用 setter 方法注入</strong>：</p>
+<p>将依赖关系通过 setter 方法注入，然后使用 <code>@Autowired</code> 和 <code>@Lazy</code> 注解来解决循环依赖问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.Lazy;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public void setServiceB(@Lazy ServiceB serviceB) &#123;</span><br><span class="line">        this.serviceB = serviceB;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.Lazy;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public void setServiceA(@Lazy ServiceA serviceA) &#123;</span><br><span class="line">        this.serviceA = serviceA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>使用 <code>@Autowired</code> 和 <code>@Qualifier</code> 注解</strong></p>
+<p>结合 <code>@Autowired</code> 和 <code>@Qualifier</code> 注解，可以精确指定要注入的 bean。这种方法可以帮助 Spring 解析循环依赖。</p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceA(@Qualifier(&quot;serviceB&quot;) ServiceB serviceB) &#123;</span><br><span class="line">        this.serviceB = serviceB;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.beans.factory.annotation.Qualifier;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceB(@Qualifier(&quot;serviceA&quot;) ServiceA serviceA) &#123;</span><br><span class="line">        this.serviceA = serviceA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，通过 <code>@Qualifier</code> 注解指定了要注入的具体 bean 的名称，从而帮助 Spring 正确解析循环依赖。</p>
+<p><strong>使用 <code>@PostConstruct</code> 方法</strong></p>
+<p>可以在一个 bean 的初始化方法中手动设置另一个 bean 的依赖。<code>@PostConstruct</code> 注解可以用来标记初始化方法，在 bean 的依赖注入完成后调用。</p>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import javax.annotation.PostConstruct;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ServiceB serviceBProxy;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    public void init() &#123;</span><br><span class="line">        this.serviceB = serviceBProxy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import javax.annotation.PostConstruct;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private ServiceA serviceAProxy;</span><br><span class="line"></span><br><span class="line">    @PostConstruct</span><br><span class="line">    public void init() &#123;</span><br><span class="line">        this.serviceA = serviceAProxy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，通过在 <strong><code>ServiceA</code></strong> 和 <code>ServiceB</code> 类中分别注入对方的代理对象，并在 <code>@PostConstruct</code> 方法中设置真正的依赖，从而解决循环依赖的问题。</p>
+<p><strong>原理</strong>：</p>
+<p>在 Spring 框架中，当处理循环依赖时，Spring 会利用代理对象来解决依赖注入的问题。具体来说，Spring 在处理循环依赖时会有以下几种情况：</p>
+<ol>
+<li><strong>普通情况下的注入</strong>：<ul>
+<li>当没有循环依赖时，<code>@Autowired</code> 注解会直接将实际的 bean 实例注入到目标对象中。</li>
+</ul>
+</li>
+<li><strong>循环依赖的处理</strong>：<ul>
+<li>当存在循环依赖时，Spring 会采用提前暴露（early exposure）的策略。这意味着在一个 bean 还没有完全初始化时，Spring 可能会先暴露一个未完全初始化的代理对象给依赖它的其他 bean。</li>
+</ul>
+</li>
+<li><strong>代理对象的标识</strong>：<ul>
+<li>Spring 为了区分实际 bean 和代理对象，在代理对象上通常会实现特定的接口，如 <code>org.springframework.aop.SpringProxy</code> 或 <code>org.springframework.aop.framework.Advised</code>。这些接口可以用来检查一个对象是否是代理对象。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"><span class="keyword">import</span> org.springframework.aop.SpringProxy;</span><br><span class="line"><span class="keyword">import</span> org.springframework.aop.framework.Advised;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServiceC</span> &#123;</span><br><span class="line"><span class="keyword">private</span> ServiceA serviceA;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> ServiceA serviceAProxy;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">checkProxy</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (serviceAProxy <span class="keyword">instanceof</span> SpringProxy) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;serviceAProxy is a Spring proxy&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (serviceAProxy <span class="keyword">instanceof</span> Advised) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;serviceAProxy is Advised&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p><strong>使用 <code>@DependsOn</code> 注解</strong></p>
+<p>可以使用 <code>@DependsOn</code> 注解来指定 bean 的创建顺序，从而帮助 Spring 正确处理循环依赖。</p>
+<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.DependsOn;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">@DependsOn(&quot;serviceB&quot;)</span><br><span class="line">public class ServiceA &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceB serviceB;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceA(ServiceB serviceB) &#123;</span><br><span class="line">        this.serviceB = serviceB;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">java复制代码import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.context.annotation.DependsOn;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">@DependsOn(&quot;serviceA&quot;)</span><br><span class="line">public class ServiceB &#123;</span><br><span class="line"></span><br><span class="line">    private final ServiceA serviceA;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public ServiceB(ServiceA serviceA) &#123;</span><br><span class="line">        this.serviceA = serviceA;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，通过 <code>@DependsOn</code> 注解显式指定 bean 的依赖顺序，确保 <code>ServiceA</code> 在 <code>ServiceB</code> 之后创建，从而解决循环依赖的问题。</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            cyris
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/sqlite%E8%BD%ACmysql/">sqlite转mysql</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E9%A1%B9%E7%9B%AE%E5%88%86%E8%A7%A3%E4%B8%BA%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%BF%AB%E6%8D%B7%E9%94%AE/">书签快捷键</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%AF%BC%E5%87%BAexcel/">接口返回类型最好是 void</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E4%BA%8B%E9%A1%B9/">maven打包</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%8C%85%E5%90%8D/">包名规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%88%A4%E6%96%AD%E9%87%8D%E5%90%8D/">优雅判断重名</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%85%B3%E4%BA%8EObjectMapper/">序列化问题</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/Untitled/">特殊文件</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/switch%E5%9D%91/">switch踩坑</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/@PointCut/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/@RequestParam%E6%B3%A8%E6%84%8F/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/jdk%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/StpUtil/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/jwt/">jwt令牌</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/switch%E5%9D%91/">switch踩坑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E5%8C%85%E5%90%8D/">包名规范</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E6%B3%A8%E8%A7%A3/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/28/%E7%9F%A5%E8%AF%86%E7%82%B91%E5%AD%98%E5%82%A8/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/11/29/%E9%A1%B9%E7%9B%AE%E5%88%86%E8%A7%A3%E4%B8%BA%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/"></a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/11/28/%E6%B3%A8%E5%85%A5%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/11/28/%E6%B3%A8%E5%85%A5%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/11/28/%E6%B3%A8%E5%85%A5%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/acg/" style="font-size: 16.353094789356764px;" class="tag-cloud-link">acg</a>
+    
+    <a href="/tags/%E5%B9%BB%E6%83%B3%E4%B9%A1/" style="font-size: 8.55214547286363px;" class="tag-cloud-link">幻想乡</a>
+    
+    <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 16.699091913422592px;" class="tag-cloud-link">技术</a>
+    
+    <a href="/tags/java/" style="font-size: 14.646025059416914px;" class="tag-cloud-link">java</a>
+    
+    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" style="font-size: 12.883270303407425px;" class="tag-cloud-link">网络协议</a>
+    
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.244815056367692px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="/tags/%E5%91%BD%E5%90%8D/" style="font-size: 18.470108670838552px;" class="tag-cloud-link">命名</a>
+    
+    <a href="/tags/idea/" style="font-size: 15.657737813265795px;" class="tag-cloud-link">idea</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 cyris Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+
+</html>
