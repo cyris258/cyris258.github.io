@@ -14,6 +14,7 @@
   
   
   <title>
+    unicode汉字编码 |
     
     艹
   </title>
@@ -28,14 +29,18 @@
 
   
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="艹">
-<meta property="og:url" content="https://cyris258.github.io/2024/12/12/Untitled%201/index.html">
+    <meta name="description" content="com.belerweb     pinyin4j     2.5.1       12345678910111213141516171819&#x2F;&#x2F;获取汉字拼音首字符public static String getFirst(String string) &amp;#123;    char[] chars &#x3D; string.toCharArray();    String r &#x3D; &quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unicode汉字编码">
+<meta property="og:url" content="https://cyris258.github.io/2024/12/23/unicode%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81/index.html">
 <meta property="og:site_name" content="艹">
+<meta property="og:description" content="com.belerweb     pinyin4j     2.5.1       12345678910111213141516171819&#x2F;&#x2F;获取汉字拼音首字符public static String getFirst(String string) &amp;#123;    char[] chars &#x3D; string.toCharArray();    String r &#x3D; &quot;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-12T07:11:08.943Z">
-<meta property="article:modified_time" content="2024-12-12T07:11:08.920Z">
+<meta property="article:published_time" content="2024-12-23T03:28:42.031Z">
+<meta property="article:modified_time" content="2024-12-23T10:53:09.841Z">
 <meta property="article:author" content="cyris">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="字符">
 <meta name="twitter:card" content="summary">
   
   
@@ -155,7 +160,7 @@
 <header id="header">
   
     
-      <img fetchpriority="high" src="/images/banner.webp" alt="">
+      <img fetchpriority="high" src="/images/banner.webp" alt="unicode汉字编码">
     
   
   <div id="header-outer">
@@ -164,15 +169,13 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">艹</h1>
+            <h1 data-aos="slide-up">unicode汉字编码</h1>
           </a>
         
       
       
         
         <h2 id="subtitle-wrap" data-aos="slide-down">
-          
-            <a href="/" id="subtitle">月见艹</a>
           
         </h2>
       
@@ -182,13 +185,13 @@
 
         <div id="content">
           
-          <section id="main"><article id="post-Untitled 1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-unicode汉字编码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
-  <a href="/2024/12/12/Untitled%201/" class="article-date-link" data-aos="zoom-in">
-    <time datetime="2024-12-12T07:11:08.943Z" itemprop="datePublished">2024-12-12</time>
-    <time style="display: none;" id="post-update-time">2024-12-12</time>
+  <a href="/2024/12/23/unicode%E6%B1%89%E5%AD%97%E7%BC%96%E7%A0%81/" class="article-date-link" data-aos="zoom-in">
+    <time datetime="2024-12-23T03:28:42.031Z" itemprop="datePublished">2024-12-23</time>
+    <time style="display: none;" id="post-update-time">2024-12-23</time>
   </a>
 </div>
 
@@ -201,7 +204,39 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        
+        <!-- https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
+<dependency>
+    <groupId>com.belerweb</groupId>
+    <artifactId>pinyin4j</artifactId>
+    <version>2.5.1</version>
+</dependency>
+
+
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取汉字拼音首字符</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getFirst</span><span class="params">(String string)</span> &#123;</span><br><span class="line">    <span class="type">char</span>[] chars = string.toCharArray();</span><br><span class="line">    <span class="type">String</span> <span class="variable">r</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (String.valueOf(chars[i]).matches(<span class="string">&quot;[\u4e00-\u9fa5]&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">//为汉字</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="type">HanyuPinyinOutputFormat</span> <span class="variable">format</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HanyuPinyinOutputFormat</span>();</span><br><span class="line">                r += PinyinHelper.toHanyuPinyinStringArray(chars[i], format)[<span class="number">0</span>].substring(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (BadHanyuPinyinOutputFormatCombination e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            r += chars[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>按照代码这边可以匹配 51e5&#x3D;20902个汉字（unicode中u4e00到u9fa5是常用汉字区间），但实际上应该有9万多。</p>
+<p>原因：Unicode 将汉字划分为多个区域，以便更好地组织和编码。这些区域包括：</p>
+<ul>
+<li><strong>基本区（CJK Unified Ideographs）：\u4e00 到 \u9fa5，20902 个字符</strong><br>包含最常用的汉字，覆盖了中文、日文、韩文中共享的核心字符。</li>
+<li><strong>扩展区</strong>：<ul>
+<li><strong>扩展 A 区：\u3400 到 \u4DBF，约 6592 个字符</strong><br>收录了一些生僻字和地区性用字。</li>
+<li><strong>扩展 B 区：\u20000 到 \u2A6DF，42720 个字符</strong><br>包括更多的历史汉字和生僻字。</li>
+<li><strong>扩展 C、D、E、F、G 等区域</strong>，这些扩展区域进一步收录了学术研究和特殊领域的汉字，总计超过 9 万个。</li>
+</ul>
+</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0x3400</span>; i &lt;= <span class="number">0x4DBF</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">10</span>) &#123;</span><br><span class="line">        s += (<span class="type">char</span>) i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;A区段前十个字符为 ：&quot;</span> + s);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A区段前十个字符为 ：㐀㐁㐂㐃㐄㐅㐆㐇㐈㐉㐊</span><br></pre></td></tr></table></figure>
+
+<p>感觉知道了点什么但又没什么用，没用的知识点加一。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -213,6 +248,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6/" rel="tag">字符</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A0%81/" rel="tag">编码</a></li></ul>
+
 
     </footer>
   </div>
@@ -223,14 +260,14 @@
         
           
           
-            <img data-src="/images/banner.webp" data-sizes="auto" alt="压缩文件返回错误" class="lazyload">
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="底层const和顶层const" class="lazyload">
           
         
-        <a href="/2024/12/12/%E4%B8%8B%E8%BD%BD%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6/"></a>
+        <a href="/2025/03/03/%E5%BA%95%E5%B1%82const%E5%92%8C%E9%A1%B6%E5%B1%82const/"></a>
         <div class="article-nav-caption">Newer</div>
         <h3 class="article-nav-title">
           
-            压缩文件返回错误
+            底层const和顶层const
           
         </h3>
       </div>
@@ -240,14 +277,14 @@
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="这些网站不要打开###" class="lazyload">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="" class="lazyload">
         
       
-      <a href="/2024/12/04/sese/"></a>
+      <a href="/2024/12/18/hutool%E5%B7%A5%E5%85%B7%E8%B8%A9%E5%9D%91/"></a>
       <div class="article-nav-caption">Older</div>
       <h3 class="article-nav-title">
         
-          这些网站不要打开###
+          (no title)
         
       </h3>
     </div>
@@ -293,7 +330,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tags</div>
-    <div class="sidebar-state-number">22</div>
+    <div class="sidebar-state-number">24</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -450,7 +487,7 @@
     
     <div>
       <span class="icon-copyright"></span>
-      2020-2024
+      2020-2025
       <span class="footer-info-sep"></span>
       cyris
     </div>
@@ -463,10 +500,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        13.1k
+        14.1k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        01:14
+        01:15
       </div>
     
     
@@ -517,7 +554,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>Tags</div>
-    <div class="sidebar-state-number">22</div>
+    <div class="sidebar-state-number">24</div>
   </div>
 </div>
 <div class="sidebar-social">
