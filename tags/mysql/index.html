@@ -1,0 +1,844 @@
+
+  <!DOCTYPE html>
+  <html lang="en"  >
+  <head>
+  <meta charset="utf-8">
+  
+
+  
+
+  
+
+  
+  <script>window.icon_font = '4552607_tq6stt6tcg';window.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};</script>
+  
+  
+  <title>
+    Tag: mysql |
+    
+    艹
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7CNoto%20Serif%20SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media&#x3D;&#39;all&#39;">
+  
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_tq6stt6tcg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+  
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="艹">
+<meta property="og:url" content="https://cyris258.github.io/tags/mysql/index.html">
+<meta property="og:site_name" content="艹">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cyris258.github.io/images/banner.webp">
+<meta property="article:author" content="cyris">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cyris258.github.io/images/banner.webp">
+  
+  
+    <link rel="alternate" href="/atom.xml" title="艹" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+    
+      <link rel="preload" href="https://npm.webcache.cn/katex@0.16.11/dist/katex.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+  
+  
+  
+  
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+  
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+          <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+          <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+         M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+        </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <div class="main-nav-icon icon-taichi"></div>
+        <a class="main-nav-link" href="/">Home</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class="main-nav-icon icon-taichi"></div>
+        <a class="main-nav-link" href="/archives">Archives</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class="main-nav-icon icon-taichi"></div>
+        <a class="main-nav-link" href="/about">About</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class="main-nav-icon icon-taichi"></div>
+        <a class="main-nav-link" href="/friend">Friend</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
+    
+    
+    
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a>
+    
+  </nav>
+</div>
+<header id="header">
+  
+    
+      <img fetchpriority="high" src="/images/banner.webp" alt="">
+    
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">Tags</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+            <a href="/" id="subtitle">mysql</a>
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content">
+          
+          <section id="main">
+<div class="archives-outer-wrap" data-aos="fade-up">
+  <div class="tag-wrap">
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/spring/">spring</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/java/">java</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/linux/">linux</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/apache/">apache</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/acg/">acg</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E5%B9%BB%E6%83%B3%E4%B9%A1/">幻想乡</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E4%BB%A3%E7%90%86/">代理</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/jenkins/">jenkins</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/">网络协议</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/">网站</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E6%B6%A9%E6%B6%A9/">涩涩</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/mysql/">mysql</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E5%91%BD%E5%90%8D/">命名</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/http/">http</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/idea/">idea</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E7%B4%A2%E5%BC%95/">索引</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/web/">web</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E6%96%87%E4%BB%B6/">文件</a>
+      </div>
+    
+      <div class="archives-tag-list-item" data-aos="zoom-in">
+        <a class="archives-tag-list-link" href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+      </div>
+    
+  </div>
+  <div class="category-wrap">
+    
+      <div class="archives-category-list-item" data-aos="zoom-in">
+        <a class="archives-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/">日常开发问题</a>
+      </div>
+    
+      <div class="archives-category-list-item" data-aos="zoom-in">
+        <a class="archives-category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+      </div>
+    
+      <div class="archives-category-list-item" data-aos="zoom-in">
+        <a class="archives-category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/">工具开发</a>
+      </div>
+    
+  </div>
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap" data-aos="fade-up">
+        <div class="archive-year-wrap">
+          <a href="/archives/2024" class="archive-year">2024</a>
+        </div>
+        <ul>
+          
+          <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <a href="/2024/12/03/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/">
+      <time class="dt-published" datetime="2024-12-03T03:11:17.624Z" itemprop="datePublished">12-03</time>
+    </a>
+  </div>
+  
+    <a class="archive-article-title" href="/2024/12/03/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/">索引失效问题</a>
+  
+</li>
+
+          
+    
+    
+          <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <a href="/2024/12/03/%E5%90%88%E5%B9%B6%E8%A1%A8/">
+      <time class="dt-published" datetime="2024-12-03T03:11:17.609Z" itemprop="datePublished">12-03</time>
+    </a>
+  </div>
+  
+    <a class="archive-article-title" href="/2024/12/03/%E5%90%88%E5%B9%B6%E8%A1%A8/">数据库表合并</a>
+  
+</li>
+
+          
+    
+    
+          <li class="archive-article">
+  <div class="archive-article-date-wrap">
+    <a href="/2024/12/03/%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/">
+      <time class="dt-published" datetime="2024-12-03T03:11:17.607Z" itemprop="datePublished">12-03</time>
+    </a>
+  </div>
+  
+    <a class="archive-article-title" href="/2024/12/03/%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/">sql查询优化</a>
+  
+</li>
+
+          
+          
+        </ul>
+      </section>
+  
+  </div>
+
+
+
+</section>
+          
+            <aside id="sidebar">
+  <div class="sidebar-wrapper ">
+    <div class="sidebar-wrap" data-aos="fade-up">
+      
+        <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="cyris" class="lazyload">
+  <div class="sidebar-author-name">cyris</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div>
+    <div class="sidebar-state-number">44</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Categories</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tags</div>
+    <div class="sidebar-state-number">22</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:xxx@gmail.com itemprop="url" target="_blank" aria-label="email" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/yourname itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-google sidebar-social-icon">
+      <a href=https://plus.google.com/yourname itemprop="url" target="_blank" aria-label="google" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-twitter sidebar-social-icon">
+      <a href=https://twitter.com/yourname itemprop="url" target="_blank" aria-label="twitter" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-facebook sidebar-social-icon">
+      <a href=https://www.facebook.com/yourname itemprop="url" target="_blank" aria-label="facebook" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/yourname itemprop="url" target="_blank" aria-label="instagram" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-linkedin sidebar-social-icon">
+      <a href=https://www.linkedin.com/in/yourname itemprop="url" target="_blank" aria-label="linkedin" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-pinterest sidebar-social-icon">
+      <a href=https://www.pinterest.com/yourname itemprop="url" target="_blank" aria-label="pinterest" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-youtube sidebar-social-icon">
+      <a href=https://www.youtube.com/channel/yourname itemprop="url" target="_blank" aria-label="youtube" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-vimeo sidebar-social-icon">
+      <a href=https://vimeo.com/yourname itemprop="url" target="_blank" aria-label="vimeo" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-flickr sidebar-social-icon">
+      <a href=https://www.flickr.com/photos/yourname itemprop="url" target="_blank" aria-label="flickr" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-dribbble sidebar-social-icon">
+      <a href=https://dribbble.com/yourname itemprop="url" target="_blank" aria-label="dribbble" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-behance sidebar-social-icon">
+      <a href=https://www.behance.net/yourname itemprop="url" target="_blank" aria-label="behance" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/yourname itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-weibo sidebar-social-icon">
+      <a href=https://weibo.com/yourname itemprop="url" target="_blank" aria-label="weibo" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-zhihu sidebar-social-icon">
+      <a href=https://www.zhihu.com/people/yourname itemprop="url" target="_blank" aria-label="zhihu" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-reddit sidebar-social-icon">
+      <a href=https://www.reddit.com/user/yourname itemprop="url" target="_blank" aria-label="reddit" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-tumblr sidebar-social-icon">
+      <a href=https://yourname.tumblr.com itemprop="url" target="_blank" aria-label="tumblr" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-medium sidebar-social-icon">
+      <a href=https://medium.com/@yourname itemprop="url" target="_blank" aria-label="medium" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-deviantart sidebar-social-icon">
+      <a href=https://yourname.deviantart.com itemprop="url" target="_blank" aria-label="deviantart" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-stackoverflow sidebar-social-icon">
+      <a href=https://stackoverflow.com/users/yourname itemprop="url" target="_blank" aria-label="stackoverflow" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-keybase sidebar-social-icon">
+      <a href=https://keybase.io/yourname itemprop="url" target="_blank" aria-label="keybase" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-telegram sidebar-social-icon">
+      <a href=https://t.me/yourname itemprop="url" target="_blank" aria-label="telegram" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discordapp.com/users/yourname itemprop="url" target="_blank" aria-label="discord" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-steam sidebar-social-icon">
+      <a href=https://steamcommunity.com/id/yourname itemprop="url" target="_blank" aria-label="steam" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">About</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div>
+  
+</div>
+
+      
+      
+    </div>
+  </div>
+
+  
+</aside>
+
+          
+        </div>
+        <footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    
+    <div>
+      <span class="icon-copyright"></span>
+      2020-2024
+      <span class="footer-info-sep"></span>
+      cyris
+    </div>
+    
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener external nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"></span>
+        13.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        01:14
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+    
+  </div>
+</footer>
+
+        <div class="sidebar-top">
+          <div class="sidebar-top-taichi"></div>
+          <div class="arrow-up"></div>
+        </div>
+        <div id="mask"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="cyris" class="lazyload">
+  <div class="sidebar-author-name">cyris</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div>
+    <div class="sidebar-state-number">44</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Categories</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tags</div>
+    <div class="sidebar-state-number">22</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:xxx@gmail.com itemprop="url" target="_blank" aria-label="email" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/yourname itemprop="url" target="_blank" aria-label="github" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-google sidebar-social-icon">
+      <a href=https://plus.google.com/yourname itemprop="url" target="_blank" aria-label="google" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-twitter sidebar-social-icon">
+      <a href=https://twitter.com/yourname itemprop="url" target="_blank" aria-label="twitter" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-facebook sidebar-social-icon">
+      <a href=https://www.facebook.com/yourname itemprop="url" target="_blank" aria-label="facebook" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/yourname itemprop="url" target="_blank" aria-label="instagram" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-linkedin sidebar-social-icon">
+      <a href=https://www.linkedin.com/in/yourname itemprop="url" target="_blank" aria-label="linkedin" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-pinterest sidebar-social-icon">
+      <a href=https://www.pinterest.com/yourname itemprop="url" target="_blank" aria-label="pinterest" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-youtube sidebar-social-icon">
+      <a href=https://www.youtube.com/channel/yourname itemprop="url" target="_blank" aria-label="youtube" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-vimeo sidebar-social-icon">
+      <a href=https://vimeo.com/yourname itemprop="url" target="_blank" aria-label="vimeo" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-flickr sidebar-social-icon">
+      <a href=https://www.flickr.com/photos/yourname itemprop="url" target="_blank" aria-label="flickr" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-dribbble sidebar-social-icon">
+      <a href=https://dribbble.com/yourname itemprop="url" target="_blank" aria-label="dribbble" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-behance sidebar-social-icon">
+      <a href=https://www.behance.net/yourname itemprop="url" target="_blank" aria-label="behance" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a href=https://space.bilibili.com/yourname itemprop="url" target="_blank" aria-label="bilibili" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-weibo sidebar-social-icon">
+      <a href=https://weibo.com/yourname itemprop="url" target="_blank" aria-label="weibo" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-zhihu sidebar-social-icon">
+      <a href=https://www.zhihu.com/people/yourname itemprop="url" target="_blank" aria-label="zhihu" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-reddit sidebar-social-icon">
+      <a href=https://www.reddit.com/user/yourname itemprop="url" target="_blank" aria-label="reddit" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-tumblr sidebar-social-icon">
+      <a href=https://yourname.tumblr.com itemprop="url" target="_blank" aria-label="tumblr" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-medium sidebar-social-icon">
+      <a href=https://medium.com/@yourname itemprop="url" target="_blank" aria-label="medium" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-deviantart sidebar-social-icon">
+      <a href=https://yourname.deviantart.com itemprop="url" target="_blank" aria-label="deviantart" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-stackoverflow sidebar-social-icon">
+      <a href=https://stackoverflow.com/users/yourname itemprop="url" target="_blank" aria-label="stackoverflow" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-keybase sidebar-social-icon">
+      <a href=https://keybase.io/yourname itemprop="url" target="_blank" aria-label="keybase" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-telegram sidebar-social-icon">
+      <a href=https://t.me/yourname itemprop="url" target="_blank" aria-label="telegram" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discordapp.com/users/yourname itemprop="url" target="_blank" aria-label="discord" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+    <div class="icon-steam sidebar-social-icon">
+      <a href=https://steamcommunity.com/id/yourname itemprop="url" target="_blank" aria-label="steam" rel="noopener external nofollow noreferrer"></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/" aria-label="Home"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/archives" aria-label="Archives"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/about" aria-label="About"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">About</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a class="sidebar-menu-link-dummy" href="/friend" aria-label="Friend"></a>
+      <div class="sidebar-menu-icon icon-taichi"></div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div>
+  
+</div>
+
+    
+  </div>
+  
+</nav>
+
+    </div>
+    
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+  
+<script src="/js/generator_search.js" defer></script>
+
+
+
+
+
+
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.0.6/dist/index.umd.js" integrity="sha384-vkGvf25gm1C1PbcoD5dNfc137HzNL&#x2F;hr1RKA5HniJOaawtvUmH5lTVFgFAruE9Ge" crossorigin="anonymous"></script>
+
+  <script>
+    window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["#ff5252","#ff7c7c","#ffafaf","#ffd0d0"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["#ff0000"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'))
+  </script>
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+    
+      
+    
+    
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '0.3.5' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+  </body>
+  </html>
+
