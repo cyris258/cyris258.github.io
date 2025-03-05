@@ -28,15 +28,15 @@
 
   
   
-    <meta name="description" content="使用mysql的load指令">
+    <meta name="description" content="title: c++类学习记录date: 2025-03-05 11:28:10tags: c++ 网上案例 1234567891011121314151617181920212223class Sales_data &amp;#123;&#x2F;&#x2F; operations on Sales_data objectsstd::string isbn() const &amp;#123; return bookNo; &amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="艹">
-<meta property="og:url" content="https://cyris258.github.io/2024/12/03/%E5%A4%A7%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/index.html">
+<meta property="og:url" content="https://cyris258.github.io/2025/03/05/c-%E7%B1%BB%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="艹">
-<meta property="og:description" content="使用mysql的load指令">
+<meta property="og:description" content="title: c++类学习记录date: 2025-03-05 11:28:10tags: c++ 网上案例 1234567891011121314151617181920212223class Sales_data &amp;#123;&#x2F;&#x2F; operations on Sales_data objectsstd::string isbn() const &amp;#123; return bookNo; &amp;#1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-03T03:11:17.611Z">
-<meta property="article:modified_time" content="2024-06-22T08:59:59.723Z">
+<meta property="article:published_time" content="2025-03-05T03:28:10.855Z">
+<meta property="article:modified_time" content="2025-03-05T06:44:47.607Z">
 <meta property="article:author" content="cyris">
 <meta name="twitter:card" content="summary">
   
@@ -184,13 +184,13 @@
 
         <div id="content">
           
-          <section id="main"><article id="post-大量插入数据" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main"><article id="post-c-类学习记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
-  <a href="/2024/12/03/%E5%A4%A7%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date-link" data-aos="zoom-in">
-    <time datetime="2024-12-03T03:11:17.611Z" itemprop="datePublished">2024-12-03</time>
-    <time style="display: none;" id="post-update-time">2024-06-22</time>
+  <a href="/2025/03/05/c-%E7%B1%BB%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date-link" data-aos="zoom-in">
+    <time datetime="2025-03-05T03:28:10.855Z" itemprop="datePublished">2025-03-05</time>
+    <time style="display: none;" id="post-update-time">2025-03-05</time>
   </a>
 </div>
 
@@ -203,7 +203,114 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <p>使用mysql的load指令</p>
+        <p>title: c++类学习记录<br>date: 2025-03-05 11:28:10<br>tags: c++</p>
+<p><strong>网上案例</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Sales_data</span> &#123;<span class="comment">// operations on Sales_data objects</span></span><br><span class="line"><span class="function">std::string <span class="title">isbn</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> bookNo; &#125;</span><br><span class="line"><span class="function">Sales_data&amp; <span class="title">combine</span><span class="params">(<span class="type">const</span> Sales_data&amp;)</span></span>;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">avg_price</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">std::string bookNo;</span><br><span class="line"><span class="type">unsigned</span> units_sold;</span><br><span class="line"><span class="type">double</span> revenue;</span><br><span class="line">&#125;;  <span class="comment">//定义变量和函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// nonmember Sales_data interface functions</span></span><br><span class="line"><span class="function">Sales_data <span class="title">add</span><span class="params">(<span class="type">const</span> Sales_data&amp;, <span class="type">const</span> Sales_data&amp;)</span></span>;</span><br><span class="line"><span class="function">std::ostream &amp;<span class="title">print</span><span class="params">(std::ostream&amp;, <span class="type">const</span> Sales_data&amp;)</span></span>;</span><br><span class="line"><span class="function">std::istream &amp;<span class="title">read</span><span class="params">(std::istream&amp;, Sales_data&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// used in future chapters</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span></span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compareIsbn</span><span class="params">(<span class="type">const</span> Sales_data &amp;lhs, <span class="type">const</span> Sales_data &amp;rhs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> lhs.<span class="built_in">isbn</span>() &lt; rhs.<span class="built_in">isbn</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>1.<strong>类的定义</strong></p>
+<figure class="highlight plaintext"><figcaption><span>MyClass &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public:     // 访问权限</span><br><span class="line">int x;  // 成员变量</span><br><span class="line">void display();  // 成员函数声明</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>权限修饰符说明</p>
+<p>1.1 public	外部可访问，类的对象可以访问<br>private	外部不可访问，只能在类内部使用<br>protected	类似 private，但可被子类继承访问</p>
+<ol start="2">
+<li><strong>构造函数</strong></li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="built_in">MyClass</span>() &#123;   <span class="comment">// 构造函数</span></span><br><span class="line">x = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~<span class="built_in">MyClass</span>() &#123;  <span class="comment">// 析构函数 在类名前加~ 无返回值 无参数 在对象被销毁时自动调用</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Object destroyed&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">MyClass</span>(<span class="type">const</span> <span class="type">int</span>&amp; x):(<span class="built_in">x</span>(x)) &#123;   <span class="comment">// 构造函数使用初始化列表 &#125;&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p><strong>this指针</strong> :指向当前对象，this-&gt;x&#x3D;100;</p>
+</li>
+<li><p><strong>static修饰的静态成员</strong>，它属于类，静态成员只能访问静态成员，原理和java的静态成员一样。</p>
+</li>
+<li><p><strong>继承</strong>，和java的继承来说复杂一些。继承都只到protect一层。<br>扩展：不同类型的继承会影响被继承成员的访问权限，被继承成员的访问修饰符取在 继承类型和自身类型中取最高的。</p>
+<table>
+<thead>
+<tr>
+<th>基类成员</th>
+<th>公有继承 (public）</th>
+<th>保护继承 (protected)</th>
+<th>私有继承 (private)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>public</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>protected</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>private</td>
+<td>不可访问</td>
+<td>不可访问</td>
+<td>不可访问</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>多态（Polymorphism）</strong></p>
+<ul>
+<li><strong>基类指针&#x2F;引用调用子类方法</strong></li>
+<li><strong>关键字：virtual（虚函数）</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;Base&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> : <span class="keyword">public</span> Base &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">show</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;Derived&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Base* ptr = <span class="keyword">new</span> <span class="built_in">Derived</span>();</span><br><span class="line">ptr-&gt;<span class="built_in">show</span>();  <span class="comment">// 输出：Derived</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>7.<strong>纯虚函数 &amp; 抽象类</strong>(含有纯虚函数的基类为抽象类)</p>
+<ul>
+<li><strong>纯虚函数</strong>：<code>= 0</code>，必须由子类实现</li>
+<li><strong>抽象类</strong>：包含至少一个纯虚函数，不能实例化</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Abstract</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span> </span>= <span class="number">0</span>;  <span class="comment">// 纯虚函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Concrete</span> : <span class="keyword">public</span> Abstract &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span> <span class="keyword">override</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;Implemented&quot;</span> &lt;&lt; std::endl; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="8">
+<li><strong>操作符重载</strong></li>
+</ol>
+<ul>
+<li>允许重载运算符，如 <code>+</code>, <code>-</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code></li>
+<li>必须为 <code>类的成员函数</code> 或 <code>友元函数</code></li>
+</ul>
+   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cpp复制编辑<span class="keyword">class</span> <span class="title class_">Complex</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> real, imag;</span><br><span class="line">    <span class="built_in">Complex</span>(<span class="type">int</span> r, <span class="type">int</span> i) : <span class="built_in">real</span>(r), <span class="built_in">imag</span>(i) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重载 + 运算符</span></span><br><span class="line">    Complex <span class="keyword">operator</span>+(<span class="type">const</span> Complex&amp; c) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Complex</span>(real + c.real, imag + c.imag);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>友元（friend）</li>
+</ol>
+<ul>
+<li><strong>友元函数</strong> 可访问私有成员</li>
+<li><strong>友元类</strong> 让另一个类访问私有成员</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cpp复制编辑<span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">int</span> val) : <span class="built_in">data</span>(val) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 友元函数</span></span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">showData</span><span class="params">(<span class="type">const</span> MyClass&amp; obj)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showData</span><span class="params">(<span class="type">const</span> MyClass&amp; obj)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; obj.data &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>模板类（泛型）</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Box</span>(T val) : <span class="built_in">data</span>(val) &#123;&#125;</span><br><span class="line">    <span class="function">T <span class="title">getData</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> data; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="12">
+<li><strong>智能指针（unique_ptr,shared_ptr）</strong></li>
+</ol>
+<p>C++11 引入智能指针，管理动态内存，防止内存泄漏。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;memory&gt;</span><br><span class="line"></span><br><span class="line">std::unique_ptr&lt;int&gt; ptr1 = std::make_unique&lt;int&gt;(10);</span><br><span class="line">std::shared_ptr&lt;int&gt; ptr2 = std::make_shared&lt;int&gt;(20);</span><br></pre></td></tr></table></figure>
+
+<p><strong>13. C++11 特性</strong></p>
+<ul>
+<li><strong>移动构造函数</strong> 和 <strong>移动赋值运算符</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class MyClass &#123;</span><br><span class="line">    int* data;</span><br><span class="line">public:</span><br><span class="line">    MyClass(int val) : data(new int(val)) &#123;&#125;</span><br><span class="line">    MyClass(MyClass&amp;&amp; other) noexcept : data(other.data) &#123;</span><br><span class="line">        other.data = nullptr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>override</code> 关键字</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cpp复制编辑class Base &#123;</span><br><span class="line">public:</span><br><span class="line">    virtual void show() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Derived : public Base &#123;</span><br><span class="line">public:</span><br><span class="line">    void show() override &#123;&#125;  // 确保正确重写</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -222,35 +329,19 @@
   
   <nav id="article-nav" data-aos="fade-up">
     
-      <div class="article-nav-link-wrap article-nav-link-left">
-        
-          
-          
-            <img data-src="/images/banner.webp" data-sizes="auto" alt="" class="lazyload">
-          
-        
-        <a href="/2024/12/03/%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/"></a>
-        <div class="article-nav-caption">Newer</div>
-        <h3 class="article-nav-title">
-          
-            (no title)
-          
-        </h3>
-      </div>
-    
     
     <div class="article-nav-link-wrap article-nav-link-right">
       
         
         
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="数据库表合并" class="lazyload">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="遗传算法" class="lazyload">
         
       
-      <a href="/2024/12/03/%E5%90%88%E5%B9%B6%E8%A1%A8/"></a>
+      <a href="/2025/03/03/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/"></a>
       <div class="article-nav-caption">Older</div>
       <h3 class="article-nav-title">
         
-          数据库表合并
+          遗传算法
         
       </h3>
     </div>
